@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Feather Lyrics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+
+    </head>
+    <body>
+     <div class="page">
+        <header class="header">
+            <div class="menublock">
+                <img id="logo" src="img/logo.png" alt="feather-lyrics" height="64px" width="64px"> 
+                <div class="menulist">
+                    <h1 class="menutext" id="lesson" >Lesson</h1>
+                    <a href="http://localhost:3000/">
+                        <h1 class="menutext" id="home">Home</h1>
+                    </a>
+                    <h1 class="menutext" id="vocabulary">Vocabulary</h1>
+                </div>
+                <div class="menulog">
+                    <h1 class="menutext" id="login">Login</h1>
+                    <h1 class="menutext" id="info">Info</h1>
+                </div>
+            </div>
+        </header>
+        <main class="content">
+                <div class="side">
+                    <div class="centre">
+                        <div class="LogoTitleDesc">
+                            <div class="song">
+                                <div class="songslogo">
+                                    <% if (songdata) { %>
+                                        <img alt="Song Image" height="100px" width="100px" src=<%= songdata.SongImage %>>
+                                    <% } %>
+                                </div>
+                                <div class="songtitle">
+                                    <% if (songdata) { %>
+                                        <h1 id="title" class="text"><%= songdata.SongTitle %></h1>
+                                        <h2 class="text"><%= songdata.SongAuthor %></h2>
+                                    <% } %>
+                                </div>
+                                <div class="description">
+                                    <% if (likedata) { %>
+                                        <h1 id="difficult" class="text">Difficult: <%= likedata.difficult %></h1>
+                                        <h2 class="text">Count Likes: <%= likedata.like %></h2>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lyrics">
+                            <h1 id="LyricWord" class="text">Lyrics</h1>
+                            <h1 class="textlyrics">
+                                <% if (lyricssong) { %> <%= lyricssong.text %>
+                                    <% } %>
+                                I see you<br>
+                                You see me<br>
+                                How pleasant<br>
+                                This feeling<br>
+                                The moment<br>
+                                You hold me<br>
+                                I missed you<br>
+                                I'm sorry<br>
+                                I've given<br>
+                                What I have<br>
+                                I showed you<br>
+                                I'm growing<br>
+                                The ashes<br>
+                                Fall slowly<br>
+                                As your voice<br>
+                                Consoles me<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know<br>
+                                We're swaying<br>
+                                To drum beats<br>
+                                In motion<br>
+                                I'm feeling<br>
+                                My patience<br>
+                                Controlling<br>
+                                The question<br>
+                                I won't speak<br>
+                                We're telling<br>
+                                The stories<br>
+                                Our laughter<br>
+                                He knows me<br>
+                                We're leaving<br>
+                                We're talking<br>
+                                You're closer<br>
+                                It's calming<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know<br>
+                                The night will hold us close<br>
+                                And the stars will guide us home<br>
+                                I've been waiting for this moment<br>
+                                We're finally alone<br>
+                                I turn to ask the question<br>
+                                So anxious, my thoughts<br>
+                                Your lips were soft like winter<br>
+                                In your passion, I was lost<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know<br>
+                                As the hours pass<br>
+                                I will let you know<br>
+                                That I need to ask<br>
+                                Before I'm alone<br>
+                                How it feels to rest<br>
+                                On your patient lips<br>
+                                To eternal bliss<br>
+                                I'm so glad to know</h1>
+                        </div>
+                    </div>
+                </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <!-- <script src="js/script.js"></script>   -->
+    </body>
+</html>

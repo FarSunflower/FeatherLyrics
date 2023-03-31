@@ -1,0 +1,129 @@
+body{
+    margin: 0%;
+    
+}
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} 
+
+.footer{
+    background-color: black;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+
+.menublock{
+    background-color: rgb(141, 99, 37);
+    display: flex;
+
+}
+
+.menulist{
+    display: flex;
+    margin: auto;
+    
+}
+
+.menutext{
+    padding-left: 10px;
+}
+
+.menulog{
+    position:absolute;
+    display: flex;
+    right: 0;
+}
+
+.content{
+    flex:1;
+    background-color: darkgreen;
+}
+
+.side{
+    max-width: 1300px;
+    margin: auto;
+
+}
+
+.center{
+    width: 100%;
+}
+
+#logo{
+    padding-top: 6px;
+    position:absolute;
+    display: flex;
+    left: 0;
+}
+.LogoTitleDesc{
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+    background-color: green;
+}
+.LogoTitleDesc1{
+    display: flex;
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+    background-color: green;
+}
+.songslogo{
+    padding-left: 5px;
+    padding-bottom: 5px;
+    display: flex;
+}
+.songtitle{
+    padding-left: 10px;
+}
+.description{
+    position: absolute;
+    right: 0%;
+    padding-right: 5px;
+}
+
+#difficult,#title{
+    padding-top: 5px;
+    padding-bottom: 30px;
+}
+
+.song{
+    padding-top: 5px;
+    display: flex;
+}
+.text{
+    margin: 0%;
+}
+
+.lyrics{
+    padding: auto;
+    background-color: lightgreen;
+}
+#LyricWord{
+    text-align: center;
+}
+.textlyrics{
+    text-align: center;
+    margin-bottom: 0%;
+}
+@media screen and (max-width: 900px){
+    /* .maintextborder{
+        margin: 50px;
+        margin-top: 10px;
+    } */
+}
+@media screen and (max-width: 665px){
+    .menulog{
+        display: none;
+    }
+}
+@media screen and (max-width: 475px){
+    #logo{
+        display: none;
+    }
+}
