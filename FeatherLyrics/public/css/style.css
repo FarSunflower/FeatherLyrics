@@ -108,8 +108,11 @@ body{
     text-align: center;
 }
 .textlyrics{
+    display: table;
+    white-space: pre-line;
     text-align: center;
     margin-bottom: 0%;
+    margin: auto;
 }
 @media screen and (max-width: 900px){
     /* .maintextborder{

@@ -1,5 +1,5 @@
 import { Controller, Get, Param, Res } from '@nestjs/common';
-import { Response } from 'express';
+import { Response, response } from 'express';
 import { SongsService } from './songs.service';
 
 @Controller()
@@ -10,7 +10,7 @@ export class SongsController {
     return response.render('pages/song', {
       songdata: this.songService.getSong(),
       likedata: this.songService.getLikes(),
-      lyricssong: this.songService.getLyrics(),
+      arraydata: this.songService.splitlyrics(this.songService.getLyrics()),
     });
   }
   @Get('song2')
@@ -18,9 +18,18 @@ export class SongsController {
     return response.render('pages/song2', {
       songdata: this.songService.getSong2(),
       likedata: this.songService.getLikes2(),
-      lyrics2song: this.songService.getLyrics2(),
+      arraydata: this.songService.splitlyrics(this.songService.getLyrics2()),
     });
   }
+  // @Get('song:id')
+  // fuckd(@Param id) {
+  // getSongInfoSong3(@Res() response: Response) {
+  //   return response.render('pages/song', {
+  //     songdata: this.songService.getSong(':id'),
+  //     likedata: this.songService.getLikes(':id'),
+  //     arraydata: this.songService.splitlyrics(this.songService.getLyrics(':id')),
+  //   });
+  // }}
   @Get()
   getSongInfoIndex(@Res() response: Response) {
     return response.render('pages/index', {
