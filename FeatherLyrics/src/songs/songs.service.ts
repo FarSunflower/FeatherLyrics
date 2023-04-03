@@ -11,6 +11,7 @@ interface Likes {
   difficult: number;
 }
 interface Lyrics {
+  id?: number;
   text?: string;
   textafter?: string;
   textbefore?: string;
@@ -56,6 +57,7 @@ export class SongsService {
   }
   getLyrics(): Lyrics {
     const lyrics = {
+      id: 1,
       text: `I see you
       You see me
       How pleasant
@@ -165,6 +167,7 @@ export class SongsService {
   }
   getLyrics2(): Lyrics {
     const lyrics = {
+      id: 2,
       text: `Tell me you need me
       Hold my hand, everything will be okay
       I heard from the heavens that clouds have been grey
