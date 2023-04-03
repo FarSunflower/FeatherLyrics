@@ -39,4 +39,8 @@ export class SongsController {
       like1data: this.songService.getLikes2(),
     });
   }
+  @Get()
+  getlogin(@Res() response: Response) {
+    return response.render('pages/loginpage', {});
+  }
 }
