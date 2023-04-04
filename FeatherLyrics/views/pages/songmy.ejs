@@ -17,12 +17,12 @@
                 <div class="menulist">
                     <h1 class="menutext" id="lesson" >Lesson</h1>
                     <a href="http://localhost:3000/">
-                        <h1 class="menutext" id="home">Home</h1>
+                    <h1 class="menutext" id="home">Home</h1>
                     </a>
-                    <h1 class="menutext" id="vocabulary">Vocabulary</h1>
+                    <h1 class="menutext" id="vocablulary">Vocabulary</h1>
                 </div>
                 <div class="menulog">
-                    <h1 class="menutext" id="login">Login</h1>
+                    <button class="menutext" id="login" onclick="authorize();">Login</button>
                     <h1 class="menutext" id="info">Info</h1>
                 </div>
             </div>
@@ -31,31 +31,23 @@
                 <div class="side">
                     <div class="centre">
                         <div class="LogoTitleDesc">
+                            <% songs.forEach((song)=> { %>
                             <div class="song">
                                 <div class="songslogo">
-                                    <% if (songdata) { %>
-                                        <img alt="Song Image" height="100px" width="100px" src=<%= songdata.SongImage %>>
-                                    <% } %>
+                                        <img alt="Song Image" height="100px" width="100px" src=<%= song.SongImage %>>
                                 </div>
                                 <div class="songtitle">
-                                    <% if (songdata) { %>
-                                        <h1 id="title" class="text"><%= songdata.SongTitle %></h1>
-                                        <h2 class="text"><%= songdata.SongAuthor %></h2>
-                                    <% } %>
+                                        <h1 id="title" class="text"><%= song.SongTitle %></h1>
+                                        <h2 class="text"><%= song.SongAuthor %></h2>
                                 </div>
                                 <div class="description">
-                                    <% if (songdata) { %>
-                                        <h1 id="difficult" class="text">Difficult: <%= songdata.difficult %></h1>
-                                        <h2 class="text">Count Likes: <%= songdata.like %></h2>
+                                    <% if (song) { %>
+                                        <h1 id="difficult" class="text">Difficult: <%= song.difficult %></h1>
+                                        <h2 class="text">Count Likes: <%= song.like %></h2>
                                     <% } %>
                                 </div>
                             </div>
-                        </div>
-                        <div class="lyrics">
-                            <h1 id="LyricWord" class="text">Lyrics</h1>
-                            <h1 class="textlyrics">
-                                <% if (arraydata) { %> <%= arraydata.textafter %>
-                                    <% } %>
+                            <% }) %>
                         </div>
                     </div>
                 </div>
@@ -63,6 +55,7 @@
         <footer class="footer"></footer>
     </div>
         <script src="js/jquery-3.6.0.min.js"></script>
-        <!-- <script src="js/script.js"></script>   -->
+        <script src="/public/js/script.js"></script> 
+        <script src="/public/js/script.ts"></script>  
     </body>
 </html>

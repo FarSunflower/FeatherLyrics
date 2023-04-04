@@ -1,15 +1,5 @@
 import { Injectable } from '@nestjs/common';
-
-interface Song {
-  SongTitle: string;
-  SongImage: string; //image
-  SongAuthor: string;
-  id: number;
-}
-interface Likes {
-  like: number;
-  difficult: number;
-}
+import { Like } from './songs.dto';
 interface Lyrics {
   id?: number;
   text?: string;
@@ -18,37 +8,28 @@ interface Lyrics {
 }
 @Injectable()
 export class SongsService {
-  getSong(): Song {
+  public readonly song = Like;
+  getSong(): Like {
     const SongAfterDark = {
       SongTitle: 'After Dark',
       SongImage: 'img/afterdark.png',
       SongAuthor: 'Mr. Kitty',
       id: 1,
+      like: 20000,
+      difficult: 1,
     };
     return SongAfterDark;
   }
-  getSong2(): Song {
+  getSong2(): Like {
     const SongHoldMyHand = {
       SongTitle: 'Hold My Hand',
       SongImage: 'img/holdmyhand.png',
       SongAuthor: 'Lady Gaga',
       id: 2,
-    };
-    return SongHoldMyHand;
-  }
-  getLikes(): Likes {
-    const likes = {
-      like: 20000,
-      difficult: 1,
-    };
-    return likes;
-  }
-  getLikes2(): Likes {
-    const likes = {
       like: 25000,
       difficult: 2,
     };
-    return likes;
+    return SongHoldMyHand;
   }
   splitlyrics(lyrics): Lyrics {
     const splitlyr = { textbefore: lyrics.text.split('\n') };

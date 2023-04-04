@@ -1,45 +1,35 @@
 import { Controller, Get, Param, Res } from '@nestjs/common';
 import { Response, response } from 'express';
 import { SongsService } from './songs.service';
+import { songs } from './songs';
 
 @Controller()
 export class SongsController {
   constructor(private readonly songService: SongsService) {}
+  @Get()
+  getListSong(@Res() response: Response) {
+    return response.render('pages/indexmy', {
+      songs,
+    });
+  }
+
   @Get('song')
   getSongInfoSong(@Res() response: Response) {
     return response.render('pages/song', {
       songdata: this.songService.getSong(),
-      likedata: this.songService.getLikes(),
       arraydata: this.songService.splitlyrics(this.songService.getLyrics()),
     });
   }
+
   @Get('song2')
   getSongInfoSong2(@Res() response: Response) {
     return response.render('pages/song2', {
       songdata: this.songService.getSong2(),
-      likedata: this.songService.getLikes2(),
       arraydata: this.songService.splitlyrics(this.songService.getLyrics2()),
     });
   }
-  // @Get('song:id')
-  // fuckd(@Param id) {
-  // getSongInfoSong3(@Res() response: Response) {
-  //   return response.render('pages/song', {
-  //     songdata: this.songService.getSong(':id'),
-  //     likedata: this.songService.getLikes(':id'),
-  //     arraydata: this.songService.splitlyrics(this.songService.getLyrics(':id')),
-  //   });
-  // }}
-  @Get()
-  getSongInfoIndex(@Res() response: Response) {
-    return response.render('pages/index', {
-      songdata: this.songService.getSong(),
-      likedata: this.songService.getLikes(),
-      song1data: this.songService.getSong2(),
-      like1data: this.songService.getLikes2(),
-    });
-  }
-  @Get()
+
+  @Get('login')
   getlogin(@Res() response: Response) {
     return response.render('pages/loginpage', {});
   }
