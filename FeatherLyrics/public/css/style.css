@@ -1,64 +1,70 @@
+
 body{
     margin: 0%;
-    
 }
+/*Вся сторінка*/
 .page {
     overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 } 
-
-.footer{
-    background-color: black;
-    padding: 20px;
-    margin-top: auto;
-    width: 100%;
-}
-
-
+/*Верхня стрічка*/
 .menublock{
     background-color: rgb(141, 99, 37);
     display: flex;
 
 }
-
+/*Головна, Словник, Уроки*/
 .menulist{
     display: flex;
     margin: auto;
-    
 }
-
+#home{
+    padding-left: 70px;
+    padding-right: 70px;
+}
 .menutext{
-    padding-left: 10px;
+    margin: 16px;
+    font-size: 42px;
 }
-
+/*Інформація, Логін*/
 .menulog{
+    padding-right: 10px;
     position:absolute;
     display: flex;
     right: 0;
 }
-
+/*Середина сторінки*/
 .content{
     flex:1;
     background-color: darkgreen;
 }
-
+/*Бокові стрічки*/
 .side{
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
 
 }
-
+/*Середина*/
 .center{
     width: 100%;
 }
-
+/*Логотип FeatherLyrics*/
 #logo{
+    padding-left: 10px;
     padding-top: 6px;
     position:absolute;
     display: flex;
     left: 0;
+}
+/*Логотип та інформація о пісні*/
+.song{
+    padding-top: 5px;
+    display: flex;
+}
+.song:hover {
+    background-color: #cf4141;
 }
 .LogoTitleDesc{
     max-width: 1300px;
@@ -86,20 +92,27 @@ body{
     right: 0%;
     padding-right: 5px;
 }
-
+/*Відступи*/
 #difficult,#title{
     padding-top: 5px;
     padding-bottom: 30px;
 }
-
-.song{
-    padding-top: 5px;
-    display: flex;
+#difficult{
+    margin: 0%;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 .text{
     margin: 0%;
 }
-
+.textsymbol{
+    font-size: xx-large;
+}
+#likes{
+    margin: 0%;
+    padding-top: 15px;
+}
+/*Текст пісні*/
 .lyrics{
     padding: auto;
     background-color: lightgreen;
@@ -107,6 +120,7 @@ body{
 #LyricWord{
     text-align: center;
 }
+/*Розміщення тексту пісні*/
 .textlyrics{
     display: table;
     white-space: pre-line;
@@ -114,6 +128,54 @@ body{
     margin-bottom: 0%;
     margin: auto;
 }
+
+/*Стрічна знизу*/
+.footer{
+    background-color: black;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+}
+/*pagination*/
+/* Ссылки для разбиения на страницы */
+.pagination{
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+}
+.pagination a {
+    color: white;
+    float: left;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border-radius: 30px;
+}
+  
+/* Стиль активной/текущей ссылки */
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+  
+/* Добавить серый цвет фона при наведении курсора мыши */
+.pagination a:hover:not(.active) {
+  background-color: #cf4141;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  /*media data*/
 @media screen and (max-width: 900px){
     /* .maintextborder{
         margin: 50px;
