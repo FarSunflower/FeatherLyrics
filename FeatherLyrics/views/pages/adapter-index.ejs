@@ -13,7 +13,7 @@
      <div class="page">
         <header class="header">
             <div class="menublock">
-                <img id="logo" src="img/logo.png" alt="feather-lyrics" height="64px" width="64px"> 
+                <img id="logo" src="img/logo.png" alt="feather-lyrics" height="70px" width="70px"> 
                 <div class="menulist">
                     <h1 class="menutext" id="lesson" >Lesson</h1>
                     <a href="http://localhost:3000/">
@@ -31,6 +31,7 @@
                 <div class="side">
                     <div class="centre">
                         <div class="LogoTitleDesc">
+                            <h1><%= songId %></h1>
                             <% songs.forEach((song)=> { %>
                             <div class="song">
                                 <div class="songslogo">
@@ -42,17 +43,28 @@
                                 </div>
                                 <div class="description">
                                     <% if (song) { %>
-                                        <h1 id="difficult" class="text">Difficult: <%= song.difficult %></h1>
-                                        <h2 class="text">Count Likes: <%= song.like %></h2>
+                                        <h1 id="difficult" class="textsymbol">✰ <%= song.difficult %></h1>
+                                        <h2 id="likes" class="textsymbol">♥: <%= song.like %></h2>
                                     <% } %>
                                 </div>
                             </div>
                             <% }) %>
+                            <!-- ★ -->
                         </div>
                     </div>
                 </div>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a class="active" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">&raquo;</a>
+              </div>
+        </footer>
     </div>
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="/public/js/script.js"></script> 

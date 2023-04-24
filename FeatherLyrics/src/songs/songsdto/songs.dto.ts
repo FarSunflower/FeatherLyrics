@@ -32,8 +32,3 @@ export class SongAndDiff extends Song {
     this.difficult = difficult;
   }
 }
-
-export class Like extends Song {
-  like: number;
-  difficult: number;
-}

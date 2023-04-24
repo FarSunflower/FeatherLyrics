@@ -31,26 +31,28 @@
                 <div class="side">
                     <div class="centre">
                         <div class="LogoTitleDesc">
-                            <% songs.forEach((song)=> { %>
-                            <a href="http://localhost:3000/<%= song.id%>">
+                            <% if (songs) { %>
                             <div class="song">
-                                <div class="songslogo">
-                                        <img alt="Song Image" height="100px" width="100px" src=<%= song.SongImage %>>
+                                <div class="songslogo"> 
+                                        <img alt="Song Image" height="100px" width="100px" src=<%= songs[songId].SongImage %>>
                                 </div>
                                 <div class="songtitle">
-                                        <h1 id="title" class="text"><%= song.SongTitle %></h1>
-                                        <h2 class="text"><%= song.SongAuthor %></h2>
+                                        <h1 id="title" class="text"><%= songs[songId].SongTitle %></h1>
+                                        <h2 class="text"><%= songs[songId].SongAuthor %></h2>
                                 </div>
                                 <div class="description">
-                                    <% if (song) { %>
-                                        <h1 id="difficult" class="textsymbol">✰ <%= song.difficult %></h1>
-                                        <h2 id="likes" class="textsymbol">♥: <%= song.like %></h2>
-                                    <% } %>
+                                        <h1 id="difficult" class="textsymbol">✰ <%= songs[songId].difficult %></h1>
+                                        <h2 id="likes" class="textsymbol">♥: <%= songs[songId].like %></h2>
                                 </div>
                             </div>
-                            </a>
-                            <% }) %>
+                            <% } %>
                             <!-- ★ -->
+                            <div class="lyrics">
+                            <h1 id="LyricWord" class="text">Lyrics</h1>
+                            <h1 class="textlyrics">
+                                <% if (lyrics) { %> <%= lyrics[songId].text %>
+                                <% } %>
+                        </div>
                         </div>
                     </div>
                 </div>
