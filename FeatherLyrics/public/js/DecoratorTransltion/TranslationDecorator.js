@@ -29,7 +29,7 @@ function display_lyrics(song) {
     // застосування декоратора
     translated_lyrics.then(function(result) {
         console.log(result);
-        document.getElementById("lyrics").innerHTML = result;
+        document.getElementById("lyricsSong").innerHTML = result;
     });
 }
 console.log("Hach");
