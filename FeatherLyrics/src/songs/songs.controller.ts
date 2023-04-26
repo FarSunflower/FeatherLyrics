@@ -10,8 +10,10 @@ export class SongsController {
 
   @Get()
   getListSong(@Res() response: Response) {
+    const pageNumber = 1;
     return response.render('pages/indexmy', {
-      songs,
+      songs: this.songService.funcPagination(pageNumber),
+      pageNumber,
     });
   }
   @Get('/:id')

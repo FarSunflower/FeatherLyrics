@@ -1,9 +1,9 @@
-
 body{
     margin: 0%;
 }
 /*Вся сторінка*/
 .page {
+    color: white;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ body{
 } 
 /*Верхня стрічка*/
 .menublock{
-    background-color: rgb(141, 99, 37);
+    background-color: #000000;
     display: flex;
 
 }
@@ -38,7 +38,7 @@ body{
 /*Середина сторінки*/
 .content{
     flex:1;
-    background-color: darkgreen;
+    background-color: #0b7249;
 }
 /*Бокові стрічки*/
 .side{
@@ -64,20 +64,13 @@ body{
     display: flex;
 }
 .song:hover {
-    background-color: #cf4141;
+    background-color: #2B914C;
 }
 .LogoTitleDesc{
     max-width: 1300px;
     margin: auto;
     position: relative;
-    background-color: green;
-}
-.LogoTitleDesc1{
-    display: flex;
-    max-width: 1300px;
-    margin: auto;
-    position: relative;
-    background-color: green;
+    background-color: #1b4836;
 }
 .songslogo{
     padding-left: 5px;
@@ -115,7 +108,7 @@ body{
 /*Текст пісні*/
 .lyrics{
     padding: auto;
-    background-color: lightgreen;
+    background-color: #1e7050;
 }
 #LyricWord{
     text-align: center;
@@ -161,8 +154,18 @@ body{
   
 /* Добавить серый цвет фона при наведении курсора мыши */
 .pagination a:hover:not(.active) {
-  background-color: #cf4141;
+  background-color: #c4c4c4;
 }
+/*посилання*/
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+    cursor: auto;
+  }
+  
+  a:link:active, a:visited:active {
+    color: white;
+  }
 
 
 

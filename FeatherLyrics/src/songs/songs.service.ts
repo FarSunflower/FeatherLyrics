@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { FLAdapter } from 'src/SongAdapter/FLAdapter';
 import { SpotifySong } from 'src/SongAdapter/SongFromSpotify';
+import { songs } from './songsdto/songs';
 
 @Injectable()
 export class SongsService {
@@ -21,6 +22,14 @@ export class SongsService {
     // usersong.fromWitch();
     // spotifysong.fromSpotify();
     // adaptersong.fromWitch();
+    //end adapter
   }
-  //end adapter
+  funcPagination(pageNumber) {
+    // const pageNumber = 1;
+    const itemsPerPage = 8;
+    const startIndex = (pageNumber - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const itemsToShow = songs.slice(startIndex, endIndex);
+    return itemsToShow;
+  }
 }
