@@ -2,7 +2,7 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <title>Feather Lyrics</title>
+    <title>Songs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
 
@@ -19,7 +19,9 @@
                     <a href="http://localhost:3000/">
                     <h1 class="menutext" id="home">Home</h1>
                     </a>
-                    <h1 class="menutext" id="vocablulary">Vocabulary</h1>
+                    <a href="http://localhost:3000/vocabulary">
+                    <h1 class="menutext" id="vocabulary">Vocabulary</h1>
+                    </a>
                 </div>
                 <div class="menulog">
                     <button class="menutext" id="login" onclick="authorize();">Login</button>
@@ -49,9 +51,18 @@
                             <!-- ★ -->
                             <div class="lyrics">
                             <h1 id="LyricWord" class="text">Lyrics</h1>
-                            <h1 id="lyricsSong" class="textlyrics">
-                                <% if (lyrics) { %> <%= lyrics[songId].text %>
-                                <% } %>
+                                <div class="textlyrics">
+                                <h1 class="words">
+                                    <% lyric.forEach(function(element) { %>
+                                        <% if (element) { %>
+                                            <%= element %>
+                                          <% } %>
+                                        <% if (element.includes('\n')) { %>
+                                          <br>
+                                        <% } %>
+                                      <% }); %>
+                                </h1>
+                            </div>
                         </div>
                         </div>
                     </div>

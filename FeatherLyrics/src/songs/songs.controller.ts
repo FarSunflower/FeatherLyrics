@@ -7,7 +7,6 @@ import { lyrics } from './lyricsdto/lyrics';
 @Controller()
 export class SongsController {
   constructor(private readonly songService: SongsService) {}
-
   @Get()
   getListSong(@Res() response: Response) {
     const pageNumber = 1;
@@ -19,10 +18,13 @@ export class SongsController {
   @Get('/:id')
   async getSong(@Param('id') id: string, @Res() response: Response) {
     const songId = Number(id);
+    const lyric = this.songService.splitLyrics(songId, lyrics);
+    const space = '\n';
     return response.render('pages/songs', {
       songs,
       songId,
-      lyrics,
+      lyric,
+      space,
     });
   }
 

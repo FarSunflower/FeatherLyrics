@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { FLAdapter } from 'src/SongAdapter/FLAdapter';
 import { SpotifySong } from 'src/SongAdapter/SongFromSpotify';
 import { songs } from './songsdto/songs';
-
+import { lyrics } from './lyricsdto/lyrics';
+import { Lyrics } from './lyricsdto/lyrics.dto';
 @Injectable()
 export class SongsService {
   // adapter
@@ -31,5 +32,8 @@ export class SongsService {
     const endIndex = startIndex + itemsPerPage;
     const itemsToShow = songs.slice(startIndex, endIndex);
     return itemsToShow;
+  }
+  splitLyrics(id: number, lyrics: Lyrics[]) {
+    return lyrics[id].text.split(' ');
   }
 }
