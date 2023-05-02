@@ -3,10 +3,27 @@ import { Response, response } from 'express';
 import { SongsService } from './songs.service';
 import { songs } from './songsdto/songs';
 import { lyrics } from './lyricsdto/lyrics';
+import { profile } from 'console';
 
 @Controller()
 export class SongsController {
   constructor(private readonly songService: SongsService) {}
+  @Get('profile')
+  getProfile(@Res() response: Response) {
+    const pageNumber = 1;
+    return response.render('pages/profile', {
+      songs: this.songService.funcPagination(pageNumber),
+      pageNumber,
+    });
+  }
+  @Get('loginpage')
+  getLogin(@Res() response: Response) {
+    const pageNumber = 1;
+    return response.render('pages/loginpage', {
+      songs: this.songService.funcPagination(pageNumber),
+      pageNumber,
+    });
+  }
   @Get()
   getListSong(@Res() response: Response) {
     const pageNumber = 1;
