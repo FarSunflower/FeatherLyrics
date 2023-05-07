@@ -40,18 +40,18 @@ export class SongsController {
       pageNumber,
     });
   }
-  @Get('/:id')
-  async getSong(@Param('id') id: string, @Res() response: Response) {
-    const songId = Number(id);
-    const lyric = this.songService.splitLyrics(songId, lyrics);
-    const space = '\n';
-    return response.render('pages/songs', {
-      songs,
-      songId,
-      lyric,
-      space,
-    });
-  }
+  // @Get('/:id')
+  // async getSong(@Param('id') id: string, @Res() response: Response) {
+  //   const songId = Number(id);
+  //   const lyric = this.songService.splitLyrics(songId, lyrics);
+  //   const space = '\n';
+  //   return response.render('pages/songs', {
+  //     songs,
+  //     songId,
+  //     lyric,
+  //     space,
+  //   });
+  // }
 
   // Client for SongAdapter
   @Get('rating/:id')
