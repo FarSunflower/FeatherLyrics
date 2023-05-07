@@ -2,7 +2,7 @@
 <html>
     <head>
     <meta charset="utf-8">
-    <title>Vocabulary</title>
+    <title>Feather Lyrics</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
 
@@ -13,7 +13,7 @@
      <div class="page">
         <header class="header">
             <div class="menublock">
-                <img id="logo" src="img/logo.png" alt="feather-lyrics" height="70px" width="70px"> 
+                <img id="logo" src="img/FEATHER LYRICS_free-file.png" alt="feather-lyrics" height="70px" width="140px"> 
                 <div class="menulist">
                     <h1 class="menutext" id="lesson" >Lesson</h1>
                     <a href="http://localhost:3000/">
@@ -24,32 +24,61 @@
                     </a>
                 </div>
                 <div class="menulog">
-                    <button class="menutext" id="login" onclick="authorize();">Login</button>
-                    <h1 class="menutext" id="info">Info</h1>
+                    <a href="http://localhost:3000/loginpage">
+                        <h1 class="menutext" id="login">Login</h1>
+                    </a>
+                    <a href="http://localhost:3000/profile">
+                    <h1 class="menutext" id="profile">Profile</h1>
+                    </a>
                 </div>
             </div>
         </header>
         <main class="content">
                 <div class="side">
                     <div class="centre">
-                        <div class="LogoTitleDesc">
-                          
+                        <div class="words">
+                            <div class="LogoTitleDescVoc">
+                            <div class="Main">
+                                <div class="songVoc">
+                                    <div class="songslogoVoc">
+                                            <img alt="Song Image" height="70px" width="70px" src=<%= songs[1].SongImage %>>
+                                    </div>
+                                    <div class="songtitleVoc">
+                                            <h1 id="titleVoc" class="text"><%= songs[1].SongTitle %></h1>
+                                            <h2 class="text"><%= songs[1].SongAuthor %></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ExtendAll">
+                                <div class="Extend">
+                                <h1 id="WORD">WORD</h1>
+                                <h1 id="TRANSLATION">Переклад</h1>
+                                </div>
+                                <div class="Extend">
+                                <h1 id="WORD">WORD</h1>
+                                <h1 id="TRANSLATION">Переклад</h1>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
         </main>
         <footer class="footer">
-            <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a class="active" href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">&raquo;</a>
+            <div id="pagination" class="pagination">
+                <!-- <a href="#">&laquo;</a> -->
+                <% for (let i = 1; i <= 5; i++) { %>
+                    <% if (i === pageNumber) { %>
+                      <a id="<%= i %>" class="active"><%= i %></a>
+                    <% } else { %>
+                      <a id="<%= i %>" class="deactive"><%= i %></a>
+                    <% } %>
+                  <% } %>
+                <!-- <a href="#">&raquo;</a> -->
               </div>
         </footer>
     </div>
-        <script src="js/script.js"></script>  
+        <script src="js/script.js"></script>
+        <script src="js/pagination.js"></script>
     </body>
 </html>

@@ -199,16 +199,64 @@ a:link, a:visited {
 .words {
     white-space: nowrap;
 }
+.Main{
+    width: 300px;
+    height: 80px;
+    margin: auto;
+    font-size: 12px;
+}
+.songslogoVoc{
+    padding-left: 0px;
+    padding-bottom: 0px;
+    display: flex;
+}
+.songtitleVoc{
+    padding-left: 10px;
+}
+#titleVoc{
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+.ExtendAll{
 
-
-
-
-
-
-
-
-
-
+}
+.Extend{
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    margin: auto;
+    margin-top: 0%;
+    position: relative;
+}
+#WORD{
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#TRANSLATION{
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: absolute;
+    right: 0;
+}
+.songVoc{
+    margin-top: 0px;
+    padding-top: 0px;
+    display: flex;
+}
+.songVoc:hover {
+    background-color: #2B914C;
+}
+.Extend:hover {
+    background-color: #2B914C;
+}
+.LogoTitleDescVoc{
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+    background-color: #1b4836;
+}
 
   /*media data*/
 @media screen and (max-width: 900px){

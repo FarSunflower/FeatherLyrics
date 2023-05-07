@@ -8,6 +8,14 @@ import { profile } from 'console';
 @Controller()
 export class SongsController {
   constructor(private readonly songService: SongsService) {}
+  @Get('vocabulary')
+  getVocabulary(@Res() response: Response) {
+    const pageNumber = 1;
+    return response.render('pages/vocabulary', {
+      songs: this.songService.funcPagination(pageNumber),
+      pageNumber,
+    });
+  }
   @Get('profile')
   getProfile(@Res() response: Response) {
     const pageNumber = 1;
