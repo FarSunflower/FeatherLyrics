@@ -1,5 +1,6 @@
 import { fetchProfile, getAccessToken } from '/login.js';
 console.log("profile")
+const clientId = "0749df1023d34fe49088b64eae364f85"; // Replace with your client ID
 const accessToken = await getAccessToken(clientId, code);
 const profile = await fetchProfile(accessToken);
 populateUI(profile);
