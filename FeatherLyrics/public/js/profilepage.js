@@ -1,5 +1,8 @@
-import {redirectToAuthCodeFlow, getAccessToken} from '/login.js';
-console.log("Profile")
+import { fetchProfile, getAccessToken } from '/login.js';
+console.log("profile")
+const accessToken = await getAccessToken(clientId, code);
+const profile = await fetchProfile(accessToken);
+populateUI(profile);
  function populateUI(profile) {
     document.getElementById("displayName").innerText = profile.display_name;
     if (profile.images[0]) {
