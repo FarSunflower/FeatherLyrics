@@ -1,10 +1,28 @@
-import { fetchProfile, getAccessToken } from '/login.js';
-console.log("profile")
-const clientId = "0749df1023d34fe49088b64eae364f85"; // Replace with your client ID
-const accessToken = await getAccessToken(clientId, code);
-const profile = await fetchProfile(accessToken);
-populateUI(profile);
- function populateUI(profile) {
+import { redirectToAuthCodeFlow, getAccessToken } from "./login";
+
+const clientId = "0749df1023d34fe49088b64eae364f85";
+const params = new URLSearchParams(window.location.search);
+const code = params.get("code");
+
+if (!code) {
+    redirectToAuthCodeFlow(clientId);
+} else {
+    (async () => {
+        const accessToken = await getAccessToken(clientId, code);
+        const profile = await fetchProfile(accessToken);
+        populateUI(profile);
+      })();
+}
+
+async function fetchProfile(token) {
+    const result = await fetch("https://api.spotify.com/v1/me", {
+        method: "GET", headers: { Authorization: `Bearer ${token}` }
+    });
+
+    return await result.json();
+}
+
+function populateUI(profile) {
     document.getElementById("displayName").innerText = profile.display_name;
     if (profile.images[0]) {
         const profileImage = new Image(200, 200);
