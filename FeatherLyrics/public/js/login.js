@@ -23,7 +23,8 @@ export async function getAccessToken(clientId, code) {
     params.append("grant_type", "authorization_code");
     params.append("code", code);
     params.append("redirect_uri", "http://localhost:3000/profile");
-    params.append("code_verifier", );
+    params.append('access_token', 'your_access_token_value');
+    
 
     const result = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
