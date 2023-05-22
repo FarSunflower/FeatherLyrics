@@ -19,7 +19,7 @@ class SongPlayer {
   }
 }
 class SongDescription {
-  Lyrics() {
+  lyrics() {
     console.log('get song Lyrics');
   }
   name() {
@@ -61,12 +61,12 @@ class SongFacade {
   }
   public StartSong() {
     this.songplayer.turnon();
-    this.songdescription.Lyrics();
+    this.songdescription.lyrics();
     this.songstatus.play('Katy Perry');
   }
   public StopSong() {
     this.songplayer.turnoff();
-    this.songdescription.Lyrics();
+    this.songdescription.lyrics();
     this.songstatus.stop('Katy Perry');
   }
 }

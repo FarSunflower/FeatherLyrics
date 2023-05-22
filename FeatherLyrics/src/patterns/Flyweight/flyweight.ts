@@ -1,3 +1,4 @@
+import { getSizeInBytes } from './flyweight.utils';
 import { wordsDatabase } from './songs.data';
 export interface WordData {
   word: string;
@@ -6,11 +7,13 @@ export interface WordData {
   song: string;
 }
 
-class Word {
-  constructor(public text: string, public translation: string, public isTranslated: boolean = true) {}
+export class Word {
+  constructor(public text: string, 
+    public translation: string,
+    public isTranslated: boolean = true) {}
 }
 
-class TranslationFlyweight {
+export class TranslationFlyweight {
   private pool: Record<string, Word> = {};
 
   getWordTranslation(word: string, wordsDatabase: WordData[]): string {
@@ -27,24 +30,12 @@ class TranslationFlyweight {
       }
     }
   }
+
   getPoolSize(): number {
+    return Object.values(this.pool).reduce((sum, word) => sum + getSizeInBytes(word), 0);
+  }
+
+  getPoolLength(): number {
     return Object.keys(this.pool).length;
   }
 }
-
-// використання Flyweight
-
-const translator = new TranslationFlyweight();
-
-console.log(translator.getWordTranslation('hello', wordsDatabase));
-console.log(translator.getWordTranslation('goodbye', wordsDatabase));
-console.log(translator.getWordTranslation('sun', wordsDatabase));
-console.log(translator.getWordTranslation('developer', wordsDatabase));
-console.log(translator.getWordTranslation('travel', wordsDatabase));
-console.log(translator.getWordTranslation('travel', wordsDatabase));
-console.log(translator.getWordTranslation('culture', wordsDatabase));
-console.log(translator.getWordTranslation('culture', wordsDatabase));
-console.log('Кількість збережених перекладів у pool:', translator.getPoolSize());
-
-
-    
